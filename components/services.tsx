@@ -1,63 +1,82 @@
+import {
+  Truck,
+  Container,
+  PackageCheck,
+  Factory,
+} from "lucide-react";
+
 export default function Services() {
   const services = [
     {
-      title: "Container Transportation",
+      icon: <Container size={40} className="text-red-600" />,
+      title: "Container Transport",
       description:
-        "Safe and reliable transportation of containers across South India.",
-      icon: "🚛",
+        "Safe and timely transportation of containers across Tamil Nadu, Kerala and Andhra Pradesh.",
     },
     {
+      icon: <Truck size={40} className="text-red-600" />,
       title: "Heavy Machinery",
       description:
-        "Specialized transport solutions for heavy industrial machinery.",
-      icon: "🏗️",
+        "Professional transportation for construction equipment and heavy industrial machinery.",
     },
     {
+      icon: <Factory size={40} className="text-red-600" />,
       title: "Industrial Equipment",
       description:
-        "Secure logistics for industrial equipment and commercial cargo.",
-      icon: "⚙️",
+        "Reliable logistics solutions for factories, plants and industrial projects.",
     },
     {
-      title: "ODC Transportation",
+      icon: <PackageCheck size={40} className="text-red-600" />,
+      title: "Mixed Cargo",
       description:
-        "Expert handling of Over Dimensional Cargo with proper planning.",
-      icon: "📦",
+        "Efficient transport services for commercial goods and mixed cargo with maximum safety.",
     },
   ];
 
   return (
-    <section className="bg-gray-50 py-24">
+    <section id="services" className="bg-gray-50 py-32">
       <div className="max-w-7xl mx-auto px-8">
 
-        <h2 className="text-5xl font-bold text-center text-[#0B2447]">
-          Our Services
-        </h2>
+        <div className="text-center">
 
-        <p className="text-center text-gray-600 mt-4 mb-14">
-          Professional transportation solutions tailored for industrial and commercial clients.
-        </p>
+          <p className="text-red-600 font-semibold uppercase tracking-widest">
+            Our Services
+          </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="w-20 h-1 bg-red-600 rounded-full mx-auto mt-3"></div>
 
-          {services.map((service) => (
+          <h2 className="text-5xl font-bold text-gray-900 mt-6">
+            Transportation Solutions
+          </h2>
+
+          <p className="mt-6 text-gray-600 max-w-3xl mx-auto text-lg">
+            We provide dependable logistics services with a strong focus on
+            safety, punctuality and customer satisfaction.
+          </p>
+
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+
+          {services.map((service, index) => (
             <div
-              key={service.title}
-              className="bg-white rounded-2xl shadow-lg p-8 hover:-translate-y-2 hover:shadow-2xl transition duration-300"
+              key={index}
+              className="bg-white rounded-3xl shadow-lg border p-8 hover:-translate-y-3 hover:shadow-2xl transition duration-300"
             >
-              <div className="text-5xl mb-6">{service.icon}</div>
+              {service.icon}
 
-              <h3 className="text-2xl font-bold text-[#0B2447] mb-4">
+              <h3 className="text-2xl font-bold mt-6">
                 {service.title}
               </h3>
 
-              <p className="text-gray-600">
+              <p className="text-gray-600 mt-4 leading-8">
                 {service.description}
               </p>
             </div>
           ))}
 
         </div>
+
       </div>
     </section>
   );
