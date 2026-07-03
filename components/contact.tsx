@@ -14,7 +14,7 @@ export default function Contact() {
             Contact Us
           </span>
 
-          <h2 className="text-5xl font-black mt-5">
+          <h2 className="text-5xl font-black mt-5 text-[#07182f]">
             Get In Touch
           </h2>
 
