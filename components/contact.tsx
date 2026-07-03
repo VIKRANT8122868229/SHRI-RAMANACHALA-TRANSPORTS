@@ -36,7 +36,7 @@ export default function Contact() {
               <Phone className="text-red-600 mt-1" />
 
               <div>
-                <h3 className="font-bold text-xl">
+                <h3 className="font-bold text-xl bg-gradient-to-r from-[#07182f] to-red-600 bg-clip-text text-transparent">
                   Phone
                 </h3>
 
