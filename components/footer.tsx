@@ -1,9 +1,17 @@
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Truck,
+} from "lucide-react";
+
 export default function Footer() {
   return (
-    <footer className="bg-[#07182F] text-white">
-      <div className="max-w-7xl mx-auto px-8 py-16">
+    <footer className="bg-[#07182f] text-white">
 
-        <div className="grid md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+
+        <div className="grid lg:grid-cols-4 gap-10">
 
           {/* Company */}
 
@@ -13,14 +21,15 @@ export default function Footer() {
               SHRI RAMANACHALA
             </h2>
 
-            <p className="text-xl font-semibold mt-2">
+            <p className="font-semibold mt-2">
               TRANSPORTS
             </p>
 
-            <p className="text-gray-400 mt-6 leading-8">
-              Reliable transportation solutions for Containers,
-              Heavy Machinery, Industrial Equipment and Mixed Cargo
-              across Tamil Nadu, Kerala and Andhra Pradesh.
+            <p className="text-gray-400 leading-8 mt-6">
+              Trusted transport partner for Containers,
+              Heavy Machinery, Industrial Equipment and
+              Mixed Cargo across Tamil Nadu, Kerala and
+              Andhra Pradesh.
             </p>
 
           </div>
@@ -29,7 +38,7 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="text-2xl font-bold mb-6">
+            <h3 className="text-xl font-bold mb-6">
               Services
             </h3>
 
@@ -51,42 +60,111 @@ export default function Footer() {
 
           <div>
 
-            <h3 className="text-2xl font-bold mb-6">
+            <h3 className="text-xl font-bold mb-6">
               Contact
             </h3>
 
-            <p className="text-gray-300">
-              📞 +91 94422 68229
-            </p>
+            <div className="space-y-4">
 
-            <p className="text-gray-300 mt-3">
-              📞 +91 76670 72966
-            </p>
+              <div className="flex gap-3">
 
-            <p className="text-gray-300 mt-3">
-              ✉ shriramanachalatransports@gmail.com
-            </p>
+                <Phone className="text-red-500" size={18} />
 
-            <p className="text-gray-300 mt-3 leading-7">
-              137D/825, Karikalan Complex,
-              <br />
-              Salem Road,
-              <br />
-              Namakkal – 637001
-            </p>
+                <span>
+                  +91 94422 68229
+                </span>
+
+              </div>
+
+              <div className="flex gap-3">
+
+                <Phone className="text-red-500" size={18} />
+
+                <span>
+                  +91 76670 72966
+                </span>
+
+              </div>
+
+              <div className="flex gap-3">
+
+                <Mail className="text-red-500" size={18} />
+
+                <span className="break-all">
+                  shriramanachalatransports@gmail.com
+                </span>
+
+              </div>
+
+              <div className="flex gap-3">
+
+                <MapPin className="text-red-500" size={18} />
+
+                <span>
+                  Namakkal,
+                  Tamil Nadu
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Coverage */}
+
+          <div>
+
+            <h3 className="text-xl font-bold mb-6">
+              Service Area
+            </h3>
+
+            <div className="space-y-4">
+
+              <div className="flex gap-3">
+
+                <Truck className="text-red-500" size={18} />
+
+                Tamil Nadu
+
+              </div>
+
+              <div className="flex gap-3">
+
+                <Truck className="text-red-500" size={18} />
+
+                Kerala
+
+              </div>
+
+              <div className="flex gap-3">
+
+                <Truck className="text-red-500" size={18} />
+
+                Andhra Pradesh
+
+              </div>
+
+            </div>
 
           </div>
 
         </div>
 
-        <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
 
-          © 2026 SHRI RAMANACHALA TRANSPORTS.
-          All Rights Reserved.
+          <p className="text-gray-400 text-center">
+            © 2026 SHRI RAMANACHALA TRANSPORTS. All Rights Reserved.
+          </p>
+
+          <p className="text-gray-500 text-sm">
+            Designed with ❤️ using Next.js
+          </p>
 
         </div>
 
       </div>
+
     </footer>
   );
 }

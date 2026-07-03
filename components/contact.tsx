@@ -1,130 +1,132 @@
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-} from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-white py-32"
+      className="py-32 bg-gray-50"
     >
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center">
 
-          <p className="text-red-600 uppercase tracking-widest font-semibold">
+          <span className="text-red-600 uppercase tracking-[4px] font-semibold">
             Contact Us
-          </p>
+          </span>
 
-          <div className="w-20 h-1 bg-red-600 rounded-full mx-auto mt-3"></div>
-
-          <h2 className="text-5xl font-bold text-gray-900 mt-6">
-            Let's Move Your Cargo
+          <h2 className="text-5xl font-black mt-5">
+            Get In Touch
           </h2>
 
-          <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
-            Contact SHRI RAMANACHALA TRANSPORTS for reliable transportation
-            services across Tamil Nadu, Kerala and Andhra Pradesh.
+          <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
+            Need reliable transportation for containers, industrial equipment or
+            heavy machinery? Contact us today.
           </p>
 
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 mt-20">
+        <div className="grid lg:grid-cols-2 gap-12 mt-20">
 
-          {/* Left Side */}
+          {/* Left */}
 
           <div className="space-y-8">
 
-            <div className="flex gap-5">
-              <Phone className="text-red-600" size={32} />
-              <div>
-                <h3 className="font-bold text-xl">Phone</h3>
-                <p>+91 94422 68229</p>
-                <p>+91 76670 72966</p>
-              </div>
-            </div>
+            <div className="flex gap-5 items-start bg-white rounded-2xl p-6 shadow">
 
-            <div className="flex gap-5">
-              <Mail className="text-red-600" size={32} />
-              <div>
-                <h3 className="font-bold text-xl">Email</h3>
-                <p>shriramanachalatransports@gmail.com</p>
-              </div>
-            </div>
+              <Phone className="text-red-600 mt-1" />
 
-            <div className="flex gap-5">
-              <MapPin className="text-red-600" size={32} />
               <div>
-                <h3 className="font-bold text-xl">Office</h3>
+                <h3 className="font-bold text-xl">
+                  Phone
+                </h3>
+
+                <p className="mt-2">
+                  +91 94422 68229
+                </p>
+
                 <p>
+                  +91 76670 72966
+                </p>
+              </div>
+
+            </div>
+
+            <div className="flex gap-5 items-start bg-white rounded-2xl p-6 shadow">
+
+              <Mail className="text-red-600 mt-1" />
+
+              <div>
+
+                <h3 className="font-bold text-xl">
+                  Email
+                </h3>
+
+                <p className="mt-2 break-all">
+                  shriramanachalatransports@gmail.com
+                </p>
+
+              </div>
+
+            </div>
+
+            <div className="flex gap-5 items-start bg-white rounded-2xl p-6 shadow">
+
+              <MapPin className="text-red-600 mt-1" />
+
+              <div>
+
+                <h3 className="font-bold text-xl">
+                  Office
+                </h3>
+
+                <p className="mt-2">
                   137D/825, Karikalan Complex,
                   <br />
                   Salem Road,
                   <br />
                   Namakkal – 637001
                 </p>
-              </div>
-            </div>
 
-            <div className="flex gap-5">
-              <Clock className="text-red-600" size={32} />
-              <div>
-                <h3 className="font-bold text-xl">Working Hours</h3>
-                <p>Monday – Saturday</p>
-                <p>8:00 AM – 8:00 PM</p>
               </div>
+
             </div>
 
           </div>
 
-          {/* Right Side */}
+          {/* Right */}
 
-          <div className="bg-gray-50 p-10 rounded-3xl shadow-xl">
+          <div className="bg-white rounded-3xl shadow-xl p-10">
 
-            <h3 className="text-3xl font-bold mb-8">
-              Request a Quote
+            <h3 className="text-3xl font-bold">
+              Quick Inquiry
             </h3>
 
-            <form className="space-y-5">
+            <form className="space-y-5 mt-8">
 
               <input
-                type="text"
+                className="w-full border rounded-xl p-4"
                 placeholder="Your Name"
-                className="w-full border rounded-xl p-4"
               />
 
               <input
-                type="tel"
+                className="w-full border rounded-xl p-4"
                 placeholder="Phone Number"
-                className="w-full border rounded-xl p-4"
-              />
-
-              <input
-                type="text"
-                placeholder="Pickup Location"
-                className="w-full border rounded-xl p-4"
-              />
-
-              <input
-                type="text"
-                placeholder="Delivery Location"
-                className="w-full border rounded-xl p-4"
               />
 
               <textarea
-                rows={5}
-                placeholder="Describe your cargo..."
+                rows={6}
                 className="w-full border rounded-xl p-4"
-              ></textarea>
+                placeholder="Tell us about your transportation requirement..."
+              />
 
-              <button
-                className="w-full bg-red-600 hover:bg-red-700 text-white py-4 rounded-xl font-semibold transition"
+              <a
+                href="https://wa.me/919442268229"
+                target="_blank"
+                className="bg-green-600 hover:bg-green-700 transition rounded-xl py-4 text-white flex justify-center items-center gap-2 font-semibold"
               >
-                Send Inquiry
-              </button>
+                <MessageCircle size={20} />
+                Send via WhatsApp
+              </a>
 
             </form>
 
