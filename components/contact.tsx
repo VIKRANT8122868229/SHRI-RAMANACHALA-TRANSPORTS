@@ -14,7 +14,7 @@ export default function Contact() {
             Contact Us
           </span>
 
-          <h2 className="text-5xl font-black mt-5 text-[#07182f]">
+          <h2 className="text-5xl font-black mt-5 bg-gradient-to-r from-[#07182f] to-red-600 bg-clip-text text-transparent">
             Get In Touch
           </h2>
 
