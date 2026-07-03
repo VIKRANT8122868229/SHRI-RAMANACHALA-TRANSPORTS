@@ -8,13 +8,14 @@ export default function Contact() {
     >
       <div className="max-w-7xl mx-auto px-6">
 
+        {/* Heading */}
         <div className="text-center">
 
           <span className="text-red-600 uppercase tracking-[4px] font-semibold">
             Contact Us
           </span>
 
-          <h2 className="text-5xl font-black mt-5 bg-gradient-to-r from-[#07182f] to-red-600 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-black mt-5 text-[#07182f]">
             Get In Touch
           </h2>
 
@@ -28,40 +29,43 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12 mt-20">
 
           {/* Left */}
-
           <div className="space-y-8">
 
+            {/* Phone */}
             <div className="flex gap-5 items-start bg-white rounded-2xl p-6 shadow">
 
-              <Phone className="text-red-600 mt-1" />
+              <Phone className="text-red-600 mt-1" size={28} />
 
               <div>
-                <h3 className="font-bold text-xl bg-gradient-to-r from-[#07182f] to-red-600 bg-clip-text text-transparent">
+
+                <h3 className="font-bold text-2xl text-[#07182f]">
                   Phone
                 </h3>
 
-                <p className="mt-2">
+                <p className="mt-2 text-gray-700">
                   +91 94422 68229
                 </p>
 
-                <p>
+                <p className="text-gray-700">
                   +91 76670 72966
                 </p>
+
               </div>
 
             </div>
 
+            {/* Email */}
             <div className="flex gap-5 items-start bg-white rounded-2xl p-6 shadow">
 
-              <Mail className="text-red-600 mt-1" />
+              <Mail className="text-red-600 mt-1" size={28} />
 
               <div>
 
-                <h3 className="font-bold text-xl">
+                <h3 className="font-bold text-2xl text-[#07182f]">
                   Email
                 </h3>
 
-                <p className="mt-2 break-all">
+                <p className="mt-2 break-all text-gray-700">
                   shriramanachalatransports@gmail.com
                 </p>
 
@@ -69,17 +73,18 @@ export default function Contact() {
 
             </div>
 
+            {/* Office */}
             <div className="flex gap-5 items-start bg-white rounded-2xl p-6 shadow">
 
-              <MapPin className="text-red-600 mt-1" />
+              <MapPin className="text-red-600 mt-1" size={28} />
 
               <div>
 
-                <h3 className="font-bold text-xl">
+                <h3 className="font-bold text-2xl text-[#07182f]">
                   Office
                 </h3>
 
-                <p className="mt-2">
+                <p className="mt-2 text-gray-700">
                   137D/825, Karikalan Complex,
                   <br />
                   Salem Road,
@@ -94,34 +99,36 @@ export default function Contact() {
           </div>
 
           {/* Right */}
-
           <div className="bg-white rounded-3xl shadow-xl p-10">
 
-            <h3 className="text-3xl font-bold">
+            <h3 className="text-3xl font-bold text-[#07182f]">
               Quick Inquiry
             </h3>
 
             <form className="space-y-5 mt-8">
 
               <input
-                className="w-full border rounded-xl p-4"
+                type="text"
+                className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500"
                 placeholder="Your Name"
               />
 
               <input
-                className="w-full border rounded-xl p-4"
+                type="tel"
+                className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500"
                 placeholder="Phone Number"
               />
 
               <textarea
                 rows={6}
-                className="w-full border rounded-xl p-4"
+                className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500"
                 placeholder="Tell us about your transportation requirement..."
               />
 
               <a
                 href="https://wa.me/919442268229"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-green-600 hover:bg-green-700 transition rounded-xl py-4 text-white flex justify-center items-center gap-2 font-semibold"
               >
                 <MessageCircle size={20} />
