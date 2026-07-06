@@ -22,21 +22,17 @@ Phone: ${phone}
 Requirement:
 ${message}`;
 
-    window.open(
-      `https://wa.me/919442268229?text=${encodeURIComponent(text)}`,
-      "_blank"
-    );
+    const url = `https://wa.me/919442268229?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank");
   };
 
   return (
-    <section
-      id="contact"
-      className="py-32 bg-gray-50"
-    >
+    <section id="contact" className="py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
 
+        {/* Heading */}
         <div className="text-center">
-
           <span className="text-red-600 uppercase tracking-[4px] font-semibold">
             Contact Us
           </span>
@@ -46,95 +42,69 @@ ${message}`;
           </h2>
 
           <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
-            Need reliable transportation for containers,
-            industrial equipment or heavy machinery?
-            Contact us today.
+            Need reliable transportation for containers, industrial equipment or
+            heavy machinery? Contact us today.
           </p>
-
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mt-20">
 
-          {/* Left */}
-
+          {/* Left Side */}
           <div className="space-y-8">
 
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex gap-5">
-
-              <Phone
-                size={30}
-                className="text-red-600 mt-1"
-              />
+            <div className="flex gap-5 items-start bg-white rounded-2xl p-6 shadow">
+              <Phone className="text-red-600 mt-1" size={28} />
 
               <div>
-
-                <h3 className="text-2xl font-bold text-[#07182f]">
+                <h3 className="font-bold text-2xl text-[#07182f]">
                   Phone
                 </h3>
 
-                <p className="text-gray-700 mt-3">
+                <p className="mt-2 text-gray-700">
                   +91 94422 68229
                 </p>
 
                 <p className="text-gray-700">
                   +91 76670 72966
                 </p>
-
               </div>
-
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex gap-5">
-
-              <Mail
-                size={30}
-                className="text-red-600 mt-1"
-              />
+            <div className="flex gap-5 items-start bg-white rounded-2xl p-6 shadow">
+              <Mail className="text-red-600 mt-1" size={28} />
 
               <div>
-
-                <h3 className="text-2xl font-bold text-[#07182f]">
+                <h3 className="font-bold text-2xl text-[#07182f]">
                   Email
                 </h3>
 
-                <p className="text-gray-700 mt-3 break-all">
+                <p className="mt-2 text-gray-700 break-all">
                   shriramanachalatransports@gmail.com
                 </p>
-
               </div>
-
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-8 flex gap-5">
-
-              <MapPin
-                size={30}
-                className="text-red-600 mt-1"
-              />
+            <div className="flex gap-5 items-start bg-white rounded-2xl p-6 shadow">
+              <MapPin className="text-red-600 mt-1" size={28} />
 
               <div>
-
-                <h3 className="text-2xl font-bold text-[#07182f]">
+                <h3 className="font-bold text-2xl text-[#07182f]">
                   Office
                 </h3>
 
-                <p className="text-gray-700 mt-3 leading-7">
-                  137D/825,
-                  Karikalan Complex,
+                <p className="mt-2 text-gray-700">
+                  137D/825, Karikalan Complex,
                   <br />
                   Salem Road,
                   <br />
                   Namakkal – 637001
                 </p>
-
               </div>
-
             </div>
 
           </div>
 
-          {/* Right */}
-
+          {/* Right Side */}
           <div className="bg-white rounded-3xl shadow-xl p-10">
 
             <h3 className="text-3xl font-bold text-[#07182f]">
@@ -148,7 +118,7 @@ ${message}`;
                 placeholder="Your Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:border-red-600"
               />
 
               <input
@@ -156,7 +126,7 @@ ${message}`;
                 placeholder="Phone Number"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:border-red-600"
               />
 
               <textarea
@@ -164,9 +134,10 @@ ${message}`;
                 placeholder="Tell us about your transportation requirement..."
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:border-red-600"
               />
-                            <button
+
+              <button
                 type="button"
                 onClick={handleWhatsApp}
                 className="w-full bg-green-600 hover:bg-green-700 transition rounded-xl py-4 text-white flex justify-center items-center gap-2 font-semibold"
