@@ -23,45 +23,51 @@ export default function WhyChooseUs() {
       icon: <MapPinned size={42} className="text-red-600" />,
       title: "Wide Coverage",
       description:
-        "Serving customers across Tamil Nadu, Kerala and Andhra Pradesh.",
+        "Serving customers across Tamil Nadu, Kerala, Karnataka and Andhra Pradesh.",
     },
     {
       icon: <Users size={42} className="text-red-600" />,
-      title: "Experienced Team",
+      title: "20+ Years Experience",
       description:
-        "Professional drivers and logistics experts with years of experience.",
+        "More than two decades of trusted transportation experience with skilled drivers and logistics professionals.",
     },
   ];
 
   return (
-    <section className="bg-[#0B2447] py-32 text-white">
-      <div className="max-w-7xl mx-auto px-8">
+    <section
+      id="whychoose"
+      className="bg-[#0B2447] py-32 text-white"
+    >
+      <div className="max-w-7xl mx-auto px-6">
 
+        {/* Heading */}
         <div className="text-center">
 
-          <p className="text-red-500 uppercase tracking-widest font-semibold">
+          <p className="text-red-500 uppercase tracking-[4px] font-semibold">
             Why Choose Us
           </p>
 
           <div className="w-20 h-1 bg-red-600 rounded-full mx-auto mt-3"></div>
 
-          <h2 className="text-5xl font-bold mt-6">
+          <h2 className="text-4xl md:text-5xl font-black mt-6">
             Delivering Trust, Every Mile
           </h2>
 
-          <p className="text-gray-300 mt-6 max-w-3xl mx-auto text-lg">
-            We combine experience, reliability and customer satisfaction to
-            deliver transportation services you can depend on.
+          <p className="text-gray-300 mt-6 max-w-3xl mx-auto text-lg leading-8">
+            With over 20 years of experience, we provide reliable transportation
+            solutions for containers, heavy machinery, industrial equipment,
+            ODC cargo and mixed cargo across South India.
           </p>
 
         </div>
 
+        {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
 
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white text-black rounded-3xl p-8 shadow-xl hover:-translate-y-3 transition duration-300"
+              className="bg-white text-[#07182f] rounded-3xl p-8 shadow-xl hover:-translate-y-3 hover:shadow-2xl transition duration-300"
             >
               {feature.icon}
 
