@@ -1,3 +1,7 @@
+"use client";
+
+import Image from "next/image";
+import Reveal from "./Reveal";
 import {
   Phone,
   Mail,
@@ -8,151 +12,173 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#07182f] text-white border-t border-white/10">
+    <footer className="relative overflow-hidden bg-[#07182f] text-white">
 
-      <div className="max-w-7xl mx-auto px-6 py-20">
+      {/* Background Glow */}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="absolute -top-32 left-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
 
-          {/* Company */}
-          <div>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
 
-            <h2 className="text-3xl font-black">
-              <span className="text-red-600">SHRI</span>
-              <br />
-              RAMANACHALA
-            </h2>
+        <Reveal>
 
-            <p className="tracking-[4px] text-gray-300 mt-2 text-sm">
-              TRANSPORTS
-            </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-            <p className="text-gray-400 leading-8 mt-6">
-              Reliable transport solutions for Containers,
-              Heavy Machinery, Industrial Equipment,
-              ODC Cargo and Mixed Cargo across
-              South India.
-            </p>
+            {/* Company */}
 
-            <a
-              href="https://wa.me/919442268229"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-8 bg-green-600 hover:bg-green-700 transition px-5 py-3 rounded-xl font-semibold"
-            >
-              WhatsApp Us
-              <ArrowUpRight size={18} />
-            </a>
+            <div>
 
-          </div>
+              <Image
+                src="/images/logo/srt-logoo.png"
+                alt="Shri Ramanachala Transports"
+                width={300}
+                height={120}
+                className="h-20 w-auto"
+              />
 
-          {/* Services */}
-          <div>
+              <p className="text-gray-400 leading-8 mt-6">
+                Reliable transportation solutions for containers,
+                heavy machinery, industrial equipment, ODC cargo and
+                mixed cargo across South India.
+              </p>
 
-            <h3 className="text-xl font-bold mb-6 text-red-500">
-              Services
-            </h3>
+              <a
+                href="https://wa.me/919442268229"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-8 bg-green-600 hover:bg-green-700 hover:scale-105 transition-all duration-300 px-6 py-3 rounded-xl font-semibold shadow-lg"
+              >
+                WhatsApp Us
+                <ArrowUpRight size={18} />
+              </a>
 
-            <ul className="space-y-4 text-gray-300">
+            </div>
 
-              <li>Container Transportation</li>
-              <li>Heavy Machinery Transport</li>
-              <li>Industrial Equipment</li>
-              <li>ODC Transportation</li>
-              <li>Mixed Cargo</li>
+            {/* Services */}
 
-            </ul>
+            <div>
 
-          </div>
+              <h3 className="text-xl font-bold text-red-500 mb-6">
+                Services
+              </h3>
 
-          {/* Contact */}
-          <div>
+              <ul className="space-y-4 text-gray-300">
 
-            <h3 className="text-xl font-bold mb-6 text-red-500">
-              Contact
-            </h3>
+                <li className="hover:text-white transition cursor-pointer">
+                  Container Transportation
+                </li>
 
-            <div className="space-y-5">
+                <li className="hover:text-white transition cursor-pointer">
+                  Heavy Machinery
+                </li>
 
-              <div className="flex gap-3">
-                <Phone className="text-red-500 shrink-0" size={18} />
-                <span className="text-gray-300">
-                  +91 94422 68229
-                </span>
+                <li className="hover:text-white transition cursor-pointer">
+                  Industrial Equipment
+                </li>
+
+                <li className="hover:text-white transition cursor-pointer">
+                  ODC Transportation
+                </li>
+
+                <li className="hover:text-white transition cursor-pointer">
+                  Mixed Cargo
+                </li>
+
+              </ul>
+
+            </div>
+
+            {/* Contact */}
+
+            <div>
+
+              <h3 className="text-xl font-bold text-red-500 mb-6">
+                Contact
+              </h3>
+
+              <div className="space-y-5">
+
+                <div className="flex gap-3">
+                  <Phone className="text-red-500 shrink-0" />
+                  <div>
+                    <p>+91 94422 68229</p>
+                    <p>+91 76670 72966</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3">
+                  <Mail className="text-red-500 shrink-0" />
+                  <span className="break-all text-gray-300">
+                    shriramanachalatransports@gmail.com
+                  </span>
+                </div>
+
+                <div className="flex gap-3">
+                  <MapPin className="text-red-500 shrink-0" />
+                  <span className="text-gray-300">
+                    137D/825, Karikalan Complex
+                    <br />
+                    Salem Road
+                    <br />
+                    Namakkal - 637001
+                  </span>
+                </div>
+
               </div>
 
-              <div className="flex gap-3">
-                <Phone className="text-red-500 shrink-0" size={18} />
-                <span className="text-gray-300">
-                  +91 76670 72966
-                </span>
-              </div>
+            </div>
 
-              <div className="flex gap-3">
-                <Mail className="text-red-500 shrink-0" size={18} />
-                <span className="break-all text-gray-300">
-                  shriramanachalatransports@gmail.com
-                </span>
-              </div>
+            {/* Coverage */}
 
-              <div className="flex gap-3">
-                <MapPin className="text-red-500 shrink-0" size={18} />
-                <span className="text-gray-300">
-                  137D/825, Karikalan Complex,
-                  <br />
-                  Salem Road,
-                  <br />
-                  Namakkal - 637001
-                </span>
+            <div>
+
+              <h3 className="text-xl font-bold text-red-500 mb-6">
+                Service Area
+              </h3>
+
+              <div className="space-y-4">
+
+                {[
+                  "Tamil Nadu",
+                  "Kerala",
+                  "Karnataka",
+                  "Andhra Pradesh",
+                ].map((state) => (
+
+                  <div
+                    key={state}
+                    className="flex items-center gap-3 text-gray-300 hover:text-white transition"
+                  >
+                    <Truck
+                      size={18}
+                      className="text-red-500"
+                    />
+
+                    {state}
+
+                  </div>
+
+                ))}
+
               </div>
 
             </div>
 
           </div>
 
-          {/* Coverage */}
-          <div>
+        </Reveal>
 
-            <h3 className="text-xl font-bold mb-6 text-red-500">
-              Service Area
-            </h3>
+        {/* Bottom */}
 
-            <div className="space-y-4 text-gray-300">
-
-              <div className="flex items-center gap-3">
-                <Truck className="text-red-500" size={18} />
-                Tamil Nadu
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Truck className="text-red-500" size={18} />
-                Kerala
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Truck className="text-red-500" size={18} />
-                Andhra Pradesh
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Truck className="text-red-500" size={18} />
-                Karnataka
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 mt-16 pt-8 flex flex-col lg:flex-row justify-between items-center gap-5">
 
           <p className="text-gray-400 text-center">
             © 2026 Shri Ramanachala Transports. All Rights Reserved.
           </p>
 
-          <p className="text-gray-500 text-sm text-center">
-            Built with Next.js • Designed for Reliable Logistics
+          <p className="text-gray-500 text-center">
+            Designed & Developed with Next.js
           </p>
 
         </div>

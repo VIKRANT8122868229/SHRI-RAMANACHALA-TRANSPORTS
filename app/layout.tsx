@@ -8,10 +8,11 @@ const poppins = Poppins({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "SHRI RAMANACHALA TRANSPORTS | Container & Heavy Machinery Transport",
+export const metadata = {
+  title: "Shri Ramanachala Transports",
   description:
-    "SHRI RAMANACHALA TRANSPORTS provides reliable container transportation, heavy machinery shifting, industrial equipment transport, ODC logistics and mixed cargo services across Tamil Nadu, Kerala and Andhra Pradesh.",
+    "Reliable transportation solutions across South India.",
+
 
   keywords: [
     "Shri Ramanachala Transports",

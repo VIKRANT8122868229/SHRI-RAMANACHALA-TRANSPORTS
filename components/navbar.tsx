@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Phone, Menu, X } from "lucide-react";
 
@@ -7,35 +7,35 @@ const links = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
-  { name: "Why Choose Us", href: "#whychooseus" },
+  { name: "Why Us", href: "#whychooseus" },
   { name: "Gallery", href: "#gallery" },
   { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobile, setMobile] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [active, setActive] = useState("Home");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
 
-      const sections = links.map((item) => ({
-        name: item.name,
-        element: document.querySelector(item.href),
-      }));
+      const scrollPosition = window.scrollY + 140;
 
-      const scrollPos = window.scrollY + 150;
+      links.forEach((link) => {
+        const section = document.querySelector(link.href);
 
-      sections.forEach((section) => {
-        if (!section.element) return;
+        if (!section) return;
 
-        const top = (section.element as HTMLElement).offsetTop;
-        const height = (section.element as HTMLElement).offsetHeight;
+        const top = (section as HTMLElement).offsetTop;
+        const height = (section as HTMLElement).offsetHeight;
 
-        if (scrollPos >= top && scrollPos < top + height) {
-          setActive(section.name);
+        if (
+          scrollPosition >= top &&
+          scrollPosition < top + height
+        ) {
+          setActive(link.name);
         }
       });
     };
@@ -51,65 +51,65 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#07182f]/80 backdrop-blur-2xl border-b border-white/10 shadow-2xl"
+          ? "bg-[#07182f]/85 backdrop-blur-2xl border-b border-white/10 shadow-2xl"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+<div className="max-w-7xl mx-auto px-6 h-28 flex items-center justify-between">        {/* Logo */}
 
-        {/* Logo */}
+        <a
+  href="#home"
+  className="flex items-center shrink-0"
+>
+  <Image
+  src="/images/logo/srt-logoo.png"
+  alt="Shri Ramanachala Transports"
+  width={340}
+  height={150}
+  priority
+  className="h-24 w-auto object-contain transition-transform duration-300 hover:scale-105"
+/>
+</a>
 
-        <a href="#home" className="group">
+        {/* Desktop Navigation */}
 
-          <h1 className="text-red-600 text-4xl font-black tracking-wide transition group-hover:scale-105">
-            SRT
-          </h1>
+        <nav className="hidden lg:flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-3 py-2">
 
-          <p className="text-white text-sm tracking-[4px] group-hover:text-red-400 transition">
-            SHRI RAMANACHALA TRANSPORTS
-          </p>
-
-        </a>
-
-        {/* Desktop */}
-
-        <nav className="hidden lg:flex items-center gap-2 bg-white/5 rounded-full px-3 py-2 border border-white/10 backdrop-blur-xl">
-
-          {links.map((item) => (
+          {links.map((link) => (
 
             <a
-              key={item.name}
-              href={item.href}
-              className={`relative px-5 py-2 rounded-full transition-all duration-300 font-medium ${
-                active === item.name
+              key={link.name}
+              href={link.href}
+              className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${
+                active === link.name
                   ? "bg-red-600 text-white shadow-lg"
                   : "text-gray-200 hover:text-white hover:bg-white/10"
               }`}
             >
-              {item.name}
+              {link.name}
             </a>
 
           ))}
 
         </nav>
 
-        {/* Call */}
+        {/* Call Button */}
 
         <a
           href="tel:+919442268229"
-          className="hidden lg:flex items-center gap-2 bg-red-600 hover:bg-red-700 hover:scale-105 transition-all duration-300 px-6 py-3 rounded-full font-semibold text-white shadow-xl"
-        >
-          <Phone size={18} />
-          94422 68229
+className="hidden lg:flex items-center gap-2 bg-red-600 hover:bg-red-700 hover:scale-105 transition-all duration-300 rounded-full px-7 py-4 text-white font-semibold shadow-xl hover:shadow-red-500/30"        >
+          <Phone size={20} />
+
+          <span>94422 68229</span>
         </a>
 
-        {/* Mobile */}
+        {/* Mobile Toggle */}
 
         <button
-          onClick={() => setMobile(!mobile)}
+          onClick={() => setMobileOpen(!mobileOpen)}
           className="lg:hidden text-white"
         >
-          {mobile ? <X size={30} /> : <Menu size={30} />}
+          {mobileOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
 
       </div>
@@ -118,27 +118,35 @@ export default function Navbar() {
 
       <div
         className={`lg:hidden overflow-hidden transition-all duration-500 ${
-          mobile ? "max-h-[500px]" : "max-h-0"
+          mobileOpen ? "max-h-[500px]" : "max-h-0"
         }`}
       >
         <div className="bg-[#07182f]/95 backdrop-blur-xl border-t border-white/10">
 
-          {links.map((item) => (
+          {links.map((link) => (
 
             <a
-              key={item.name}
-              href={item.href}
-              onClick={() => setMobile(false)}
+              key={link.name}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
               className={`block px-8 py-5 transition ${
-                active === item.name
+                active === link.name
                   ? "bg-red-600 text-white"
                   : "text-white hover:bg-white/10"
               }`}
             >
-              {item.name}
+              {link.name}
             </a>
 
           ))}
+
+          <a
+            href="tel:+919442268229"
+            className="flex items-center justify-center gap-2 bg-red-600 text-white font-semibold m-6 py-4 rounded-xl"
+          >
+            <Phone size={20} />
+            94422 68229
+          </a>
 
         </div>
       </div>
